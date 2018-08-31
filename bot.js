@@ -35,7 +35,6 @@ client.on("message", message => {
 『embed / يكرر كلامك بمبيد』
 『server / معلومات عن السيرفر』
 『animal / يعطيك صور حيوانات』
-『emoji <any things> / لتحويل اي كلمه تقولها الي ايموجي』
 『image / يعرض صوره السيرفر』
 『avatar / يعرض صورتك او صوره شخص』
 『dt / يعرض الوقت في الامارات و مكه المكرمه و مصر و التاريخ』
@@ -45,6 +44,7 @@ client.on("message", message => {
 **
 『ping / يعرض لك سرعه اتصال البوت』
 『uptime / يعرض لك صار للبوت كم شغال』
+『skin <name> / يعرض لك سكنك بماين كرافت』
 『bot / معلومات عن البوت』
 **
 
@@ -404,23 +404,18 @@ const zead = [
 
 
 
-  client.on('message' , async message => {
-	  var prefix = "@";
-         if(message.content.startsWith(prefix + "emoji")) {
-            let args = message.content.split(" ").slice(1);
-    if (args.length < 1) {
-      message.channel.send('You must provide some text to emojify!');
-  }
-  
-  message.channel.send(
-      args.join(' ')
-          .split('')
-          .map(c => codes[c] || c)
-          .join('')
-  );
-  };
-  });
-
+ client.on("message", message => {
+    var prefix = "@"
+    if (!message.content.startsWith(prefix)) return;
+      let command = message.content.split(" ")[0];
+      command = command.slice(prefix.length);
+        if(command === "skin") {
+                const args = message.content.split(" ").slice(1).join(" ")
+        if (!args) return message.channel.send("** Type your skin name **");
+        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
+    message.channel.send(image)
+        }
+    });
 
 
             var prefix = "@";
