@@ -1230,6 +1230,9 @@ client.on('ready', function(){
 
 });
 
+
+
+
    client.on("message", async message => {
 var prefix = "@";
 var aoasm =[
@@ -1330,6 +1333,7 @@ var aoasm =[
            }
      });
   }
+	   
 
 
 //كود الاوان//
