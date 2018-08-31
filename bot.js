@@ -35,6 +35,7 @@ client.on("message", message => {
 『embed / يكرر كلامك بمبيد』
 『server / معلومات عن السيرفر』
 『animal / يعطيك صور حيوانات』
+『emoji <any things> / لتحويل اي كلمه تقولها الي ايموجي』
 『image / يعرض صوره السيرفر』
 『avatar / يعرض صورتك او صوره شخص』
 『dt / يعرض الوقت في الامارات و مكه المكرمه و مصر و التاريخ』
@@ -401,6 +402,24 @@ const zead = [
 
 //اوامر عامه//
 
+
+
+  client.on('message' , async message => {
+	  var prefix = "@";
+         if(message.content.startsWith(prefix + "emoji")) {
+            let args = message.content.split(" ").slice(1);
+    if (args.length < 1) {
+      message.channel.send('You must provide some text to emojify!');
+  }
+  
+  message.channel.send(
+      args.join(' ')
+          .split('')
+          .map(c => codes[c] || c)
+          .join('')
+  );
+  };
+  });
 
 
 
