@@ -1169,6 +1169,7 @@ if (message.content.startsWith("f!add.r")) {
 }
 });
 
+
 const prefix = "@"
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
@@ -1354,6 +1355,7 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
+}
 	
 
 //اومر الكونسل و البوت//
