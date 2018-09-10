@@ -33,8 +33,6 @@ client.on("message", message => {
 **
 『id / معلومات عن حسابك』
 『embed / يكرر كلامك بمبيد』
-『roles / يعرض لك الرتب و عددها』
-『rooms / يعرض لك الرومات وعددها』
 『server / معلومات عن السيرفر』
 『animal / يعطيك صور حيوانات』
 『image / يعرض صوره السيرفر』
@@ -50,7 +48,6 @@ client.on("message", message => {
 『uptime / يعرض لك صار للبوت كم شغال』
 『support / سيرفر الدعم القني و المساعده』
 『invite / اضافه البوت』
-『members / حاله الاعضاء』
 『bot / معلومات عن البوت』
 **
 
@@ -62,7 +59,6 @@ client.on("message", message => {
 『unmute /فك الميوت』
 『mutechannel /قفل الشات』
 『unmutechannel /فتح الشات』
-f!add.r
 『delet / مسح روم』
 『color 50 /انشاء 50 لون』
 『color 100/انشاء 100 لون』
@@ -812,7 +808,7 @@ client.on("message", (message) => {
  .setThumbnail(client.user.avatarURL)     
  .setDescription("Add me" + `
  **
-رابط البوت https://discordapp.com/api/oauth2/authorize?client_id=447792246494986250&permissions=2146958583&scope=bot
+  https://discordapp.com/api/oauth2/authorize?client_id=484290125510082560&permissions=8&scope=bot رابط البوت
  **
 `);
   message.author.sendEmbed(embed);
@@ -822,14 +818,14 @@ client.on("message", (message) => {
 
   client.on('message' , message => {
 
-    if (message.content === "@@support") {
+    if (message.content === "@support") {
         if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)     
  .setDescription(" ***welcome To server support*** " + `
  **
-رابط السيرفر https://discord.gg/Hf9TW4pY
+رابط السيرفر https://discord.gg/uCfAup8
  **
 `);
   message.author.sendEmbed(embed);
