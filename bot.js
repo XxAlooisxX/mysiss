@@ -511,7 +511,7 @@ var prefix = "@";
     let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == prefix + 'bc') {
     if (!args[1]) {
-message.channel.send("**f!bc <message>**");
+message.channel.send("**@bc <message>**");
 return;
 }
         message.guild.members.forEach(m => {
@@ -782,7 +782,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("f!cv")) {
+if (message.content.startsWith("@cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -793,7 +793,7 @@ if (message.content.startsWith("f!cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('f!delet')) {
+    if (message.content.startsWith('@delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -812,7 +812,7 @@ client.on("message", (message) => {
  .setThumbnail(client.user.avatarURL)     
  .setDescription("Add me" + `
  **
-رابط البوت https://discordapp.com/api/oauth2/authorize?client_id=447792246494986250&permissions=2146958583&scope=bot
+رابط البوت https://discordapp.com/api/oauth2/authorize?client_id=484290125510082560&permissions=8&scope=bot
  **
 `);
   message.author.sendEmbed(embed);
@@ -822,14 +822,14 @@ client.on("message", (message) => {
 
   client.on('message' , message => {
 
-    if (message.content === "@@support") {
+    if (message.content === "@support") {
         if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)     
  .setDescription(" ***welcome To server support*** " + `
  **
-رابط السيرفر https://discord.gg/Hf9TW4pY
+رابط السيرفر https://discord.gg/uCfAup8
  **
 `);
   message.author.sendEmbed(embed);
