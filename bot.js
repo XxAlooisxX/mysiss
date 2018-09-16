@@ -711,7 +711,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("!stats")) {
+    if (message.content.startsWith("@stats")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .addField('Uptime', timeCon(process.uptime()), true)
@@ -789,7 +789,7 @@ if (message.content.startsWith("f!cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('f!delet')) {
+    if (message.content.startsWith('delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -814,6 +814,23 @@ client.on("message", (message) => {
   message.author.sendEmbed(embed);
    }
 });
+
+client.on('message' , message => {
+
+    if (message.content === "@inv") {
+        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)     
+ .setDescription("Add me" + `
+ **
+  https://discordapp.com/api/oauth2/authorize?client_id=484290125510082560&permissions=8&scope=bot رابط البوت
+ **
+`);
+  message.author.sendEmbed(embed);
+   }
+});
+
 
 
   client.on('message' , message => {
