@@ -545,6 +545,7 @@ client.on("ready", () => {
 
 
 
+
 client.on("guildMemberAdd", (member) => {
     let channel = member.guild.channels.get("432942113697562638");
     if (!channel) {
@@ -570,6 +571,8 @@ client.on("guildMemberAdd", (member) => {
        });
     });
 });
+
+
 
 
     
